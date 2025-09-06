@@ -1,26 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Toggle = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Close mobile menu on wider screens
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="relative">
-      {/* Toggle Button */}
+    <div className="toggle-menu">
       <button
         className="toggle-button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle Menu"
+        aria-label="Toggle navigation menu"
       >
         <i className="fas fa-bars"></i>
       </button>
-
-      {/* Dropdown Menu */}
       {isOpen && (
-        <ul className="mobile-menu absolute top-full left-0 w-full bg-black bg-opacity-90 text-white flex flex-col gap-4 p-4 z-50">
+        <ul className="mobile-menu">
           <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
           <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
           <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
-          <li><a href="#contact" onClick={() => setIsOpen(false)}>Contacts</a></li>
+          <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
         </ul>
       )}
     </div>
@@ -28,3 +36,4 @@ const Toggle = () => {
 };
 
 export default Toggle;
+

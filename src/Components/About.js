@@ -5,26 +5,23 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="about-container">
         <h2 className="about-title">About Me</h2>
-        <div className="about-content">
-          <div>
-            <p>Hello! I'm Muhsin Abdiqani, a passionate web designer with four months of experience in HTML, CSS, Tailwind CSS, and Bootstrap. I love creating visually stunning and responsive websites.</p>
-            <p>My skills include:</p>
-          </div>
-          <div>
-            <ul className="about-list">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Tailwind CSS</li>
-              <li>Bootstrap</li>
-              <li>Responsive Design</li>
-              <li>Javascript</li>
-              <li>React</li>
-            </ul>
-          </div>
-        </div>
+        <p className="about-text">
+          Hello! I’m Muhsin, a passionate developer skilled in modern web technologies. I build responsive websites and interactive apps using React and Node.js.
+        </p>
+        <ul className="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>APIs</li>
+          <li>Responsive Design</li>
+          <li>Version Control (Git)</li>
+        </ul>
       </div>
     </section>
   );
 };
 
 export default About;
+
