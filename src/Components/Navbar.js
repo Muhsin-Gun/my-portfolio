@@ -100,7 +100,7 @@ const Navbar = () => {
                 {links.map((l, i) => (
                   <li key={l.id}>
                     <a href={`#${l.id}`} onClick={() => setOpen(false)}>
-                      <span className="link-index">0{ i + 1 }.</span>
+                      
                       {l.label}
                     </a>
                   </li>
