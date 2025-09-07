@@ -1,37 +1,43 @@
 import React, { useState, useEffect } from 'react';
 
-const Toggle = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  // Close mobile menu on wider screens
+const Toggle = () => {
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 900) {
-        setIsOpen(false);
-      }
+    const onResize = () => {
+      if (window.innerWidth > 900) setOpen(false);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
   return (
-    <div className="toggle-menu">
+    <>
       <button
-        className="toggle-button"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle navigation menu"
+        className={`hamburger ${open ? 'open' : ''}`}
+        aria-label="Menu"
+        onClick={() => setOpen(!open)}
       >
-        <i className="fas fa-bars"></i>
+        <span className="bar" />
+        <span className="bar" />
+        <span className="bar" />
       </button>
-      {isOpen && (
-        <ul className="mobile-menu">
-          <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-          <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
-          <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
-        </ul>
-      )}
-    </div>
+
+      <div className={`overlay ${open ? 'visible' : ''}`} onClick={() => setOpen(false)}>
+        <nav className="overlay-nav" onClick={(e) => e.stopPropagation()}>
+          <a href="#home" onClick={() => setOpen(false)}>Home</a>
+          <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
+            <a href="#about" onClick={() => setOpen(false)}>About</a>
+          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+        </nav>
+      </div>
+    </>
   );
 };
 
