@@ -42,7 +42,7 @@ const Toggle = () => {
         <span className="bar" />
       </button>
 
-      {/* dropdown that appears BELOW header; clicks inside should not close until user selects a link */}
+      
       <div
         ref={menuRef}
         className={`mobile-dropdown ${open ? 'open' : ''}`}

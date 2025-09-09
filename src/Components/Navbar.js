@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="brand-sub">web dev</div>
         </div>
 
-        {/* Desktop links */}
+        
         {!isMobile ? (
           <ul className="nav-links" data-mode="desktop">
             {links.map((l) => (

@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [status, setStatus] = useState(null); // null | sending | success | error
+  const [status, setStatus] = useState(null); 
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
