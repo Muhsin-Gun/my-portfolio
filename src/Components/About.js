@@ -1,15 +1,10 @@
 import React from 'react';
 
-/*
-  About Section:
-  - Explains who you are and what skills you bring.
-  - Grid layout: text + skill tags (hover highlight).
-*/
 const About = () => {
   const skills = [
-    'HTML5 & CSS3',
+    'HTML & CSS',
     'Responsive Design',
-    'JavaScript (ES6+)',
+    'JavaScript',
     'React.js',
     'Node.js (Express)',
     'Databases (MongoDB/MySQL)',

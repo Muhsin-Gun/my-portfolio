@@ -1,30 +1,29 @@
+// src/Components/Projects.js
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 
-/*
-  Projects:
-  - 3 realistic projects: Events (React+Node), Responsive Site, Blog
-  - No images (you asked), just clear descriptions + 'View Code' links
-  - Card hover: lift + glow
-*/
 const Projects = () => {
   const projects = [
     {
-      title: 'Events Platform (React + Node)',
+      title: 'Events Platform (frontend)',
       desc:
-        'A basic events manager with frontend in React and a Node/Express API. Features: create events, view list, RSVP, and simple search.',
-      link: 'https://github.com/yourusername/events-platform'
+        'Frontend for an events manager app built with React. Connects to a Node/Express backend for events CRUD and RSVP features.',
+      codeLink: 'https://github.com/Muhsin-Gun/event-frontend',
+      live: '' 
     },
     {
-      title: 'Responsive Company Site',
+      title: 'Calculator (vanilla JS)',
       desc:
-        'A responsive site built with mobile-first CSS Grid and Flexbox. Focus: accessibility, fluid typography, and breakpoint-specific layouts.',
-      link: 'https://github.com/yourusername/responsive-site'
+        'Standalone calculator built with HTML/CSS/JavaScript. Mobile-first and keyboard-friendly. (Repo available for review.)',
+      codeLink: 'https://github.com/Muhsin-Gun/Calculator',
+      live: ''
     },
     {
-      title: 'Personal Blog (React)',
+      title: 'Blogs (PHP)',
       desc:
-        'A small blog using React for frontend and local JSON/mock API for content. Includes routing, markdown posts, and version-controlled source.',
-      link: 'https://github.com/yourusername/react-blog'
+        'A small PHP blog project (server-rendered). Includes posts, admin flows and simple routing — good for showing full-stack knowledge.',
+      codeLink: 'https://github.com/Muhsin-Gun/blogs-php',
+      live: ''
     }
   ];
 
@@ -38,8 +37,23 @@ const Projects = () => {
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
               <div className="card-actions">
-                <a className="link" href={p.link} target="_blank" rel="noreferrer">View Code</a>
-                <a className="link ghost" href="#contact">Ask for Demo</a>
+                <a
+                  className="link"
+                  href={p.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub style={{ verticalAlign: 'middle', marginRight: 8 }} />
+                  View Code
+                </a>
+
+                {p.live ? (
+                  <a className="link ghost" href={p.live} target="_blank" rel="noopener noreferrer">
+                    Live Demo
+                  </a>
+                ) : (
+                  <span className="link ghost" title="Deploy to get a live demo">No live demo yet</span>
+                )}
               </div>
             </article>
           ))}
@@ -50,6 +64,7 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
 
 

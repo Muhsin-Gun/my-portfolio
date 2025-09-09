@@ -1,14 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-/**
- * Navbar (single-file solution)
- * - Desktop: inline links with animated underline
- * - Mobile: hamburger toggles a dropdown that expands BELOW the header (no overlay)
- * - Closes on outside click, Escape key, and on window resize > 900px
- * - Adds aria-expanded and aria-controls for accessibility
- *
- * Usage: put this file at src/Components/Navbar.js and remove any old Toggle.js / overlay files.
- */
+
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const [open, setOpen] = useState(false);

@@ -1,10 +1,5 @@
 import React from 'react';
 
-/*
-  Home - hero / introduction
-  - tech-modern dark look
-  - small animated accent and CTA hovers
-*/
 const Home = () => {
   return (
     <section id="home" className="hero">

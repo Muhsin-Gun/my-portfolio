@@ -75,8 +75,8 @@ const Contact = () => {
           </form>
 
           <aside className="card contact-info">
-            <div><strong>Email:</strong> <a href="mailto:muhsinabdi781@gmail.com">muhsinabdi781@gmai.com</a></div>
-            <div><strong>Phone:</strong> <a href="tel:+254793027220">+123 456 7890</a></div>
+            <div><strong>Email:</strong> <a href="mailto:muhsinabdi781@gmail.com">muhsinabdi781@gmail.com</a></div>
+            <div><strong>Phone:</strong> <a href="tel:+254793027220">+254793027220</a></div>
 
             <div className="socials">
               <a href="https://github.com/Muhsin-Gun" target="_blank" rel="noreferrer">

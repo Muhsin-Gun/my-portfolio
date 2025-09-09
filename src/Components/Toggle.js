@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-/*
-  Fixed Toggle:
-  - Dropdown opens BELOW the header (position: absolute; top:100%).
-  - No body scroll lock, no full-screen overlay.
-  - Closes on outside click and on resize > 900px.
-*/
+
 const Toggle = () => {
   const [open, setOpen] = useState(false);
   const btnRef = useRef(null);
